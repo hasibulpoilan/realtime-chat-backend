@@ -23,7 +23,10 @@ if (!fs.existsSync(uploadsDir)) {
 }
 
 app.use(cors({
-    origin: "*", 
+    origin: [
+    "http://localhost:5173",          // local dev
+    "https://chat-frontend-ruby-one.vercel.app"  // vercel frontend
+  ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 }));
